@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://zhanghaoran.github.io</id>
+    <id>https://zhanghaoranas.github.io</id>
     <title>Gridea</title>
-    <updated>2021-03-03T02:15:01.613Z</updated>
+    <updated>2021-03-03T02:20:07.770Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://zhanghaoran.github.io"/>
-    <link rel="self" href="https://zhanghaoran.github.io/atom.xml"/>
+    <link rel="alternate" href="https://zhanghaoranas.github.io"/>
+    <link rel="self" href="https://zhanghaoranas.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://zhanghaoran.github.io/images/avatar.png</logo>
-    <icon>https://zhanghaoran.github.io/favicon.ico</icon>
+    <logo>https://zhanghaoranas.github.io/images/avatar.png</logo>
+    <icon>https://zhanghaoranas.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[Ubuntu 配置 gitLab]]></title>
-        <id>https://zhanghaoran.github.io/post/ubuntu-pei-zhi-gitlab</id>
-        <link href="https://zhanghaoran.github.io/post/ubuntu-pei-zhi-gitlab">
+        <id>https://zhanghaoranas.github.io/post/ubuntu-pei-zhi-gitlab</id>
+        <link href="https://zhanghaoranas.github.io/post/ubuntu-pei-zhi-gitlab">
         </link>
         <updated>2019-08-18T13:32:22.000Z</updated>
         <content type="html"><![CDATA[<p>在公司中git的使用可以极大的提高团队的效率，但是项目多了管理也会出现问题，个人感觉分为两块。</p>
@@ -95,8 +95,8 @@ $ docker pull gitlab/gitlab-ce
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://zhanghaoran.github.io/post/hello-gridea</id>
-        <link href="https://zhanghaoran.github.io/post/hello-gridea">
+        <id>https://zhanghaoranas.github.io/post/hello-gridea</id>
+        <link href="https://zhanghaoranas.github.io/post/hello-gridea">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
