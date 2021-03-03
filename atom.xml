@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>C:/Users/zhr/Documents/Gridea/output</id>
+    <title>Gridea</title>
+    <updated>2021-01-01T04:09:27.595Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="C:/Users/zhr/Documents/Gridea/output"/>
+    <link rel="self" href="C:/Users/zhr/Documents/Gridea/output/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>C:/Users/zhr/Documents/Gridea/output/images/avatar.png</logo>
+    <icon>C:/Users/zhr/Documents/Gridea/output/favicon.ico</icon>
+    <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Ubuntu 配置 gitLab]]></title>
+        <id>C:/Users/zhr/Documents/Gridea/output/post/ubuntu-pei-zhi-gitlab/index.html</id>
+        <link href="C:/Users/zhr/Documents/Gridea/output/post/ubuntu-pei-zhi-gitlab/index.html">
+        </link>
+        <updated>2019-08-18T13:32:22.000Z</updated>
+        <content type="html"><![CDATA[<p>在公司中git的使用可以极大的提高团队的效率，但是项目多了管理也会出现问题，个人感觉分为两块。</p>
+<ol>
+<li>多个项目的管理，即单个人有多个简单的小项目，类似于公司的官网。</li>
+<li>团队人员的管理，即单个项目大项目存在多个人，而且在项目进行中可能还好伴随着人员的离职。<br>
+而在我们公司这两种问题竟然同时存在😂，我手里就有好几个已完成的小项目，但是每个月还要是不时的更新维护一下，同时还有一个正在进行的ERP项目。所以我感觉我们公司应该有一个类似于github的可视化项目管理平台，正好gitLab就满足了我的需求。跟领导提了一下这个问题，至于用不用还不好说，毕竟只有我一个人提意见😟。<br>
+so自己先在虚拟机中安装了一下,看看效果怎么样。<br>
+先说一下运行的环境Elementary OS  可能对这个环境感到陌生，这是什么系统？</li>
+</ol>
+<blockquote>
+<p>Elementary OS 系统是一款基于 Ubuntu 精心打磨美化的桌面 Linux 发行版</p>
+</blockquote>
+<p>所以他就是Ubuntu。由于自己对于 Linux 不太熟，所以找到一个最简单的安装方式 ----- Docker.</p>
+<p>主要的步骤有分为两大步：</p>
+<h3 id="1安装docker">1.安装docker</h3>
+<p>更新源地址</p>
+<pre><code>sudo apt-get update
+</code></pre>
+<p>安装docker 主程序</p>
+<pre><code>sudo apt-get install docker
+</code></pre>
+<p>安装docker.io</p>
+<pre><code>sudo apt-get install docker.io -y
+</code></pre>
+<p>安装docker-registry</p>
+<pre><code>sudo apt-get install docker-registry -y
+</code></pre>
+<p><strong>检测安装是否成功</strong><br>
+拉取官方hello-world测试镜像</p>
+<pre><code>sudo docker pull hello-world
+</code></pre>
+<p>当出现下面的提示时，说明拉取已经成功</p>
+<pre><code>Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788
+Status: Image is up to date for hello-world:lates
+</code></pre>
+<p>运行官方的hello-world测试镜像。</p>
+<pre><code>sudo docker run hello-world
+</code></pre>
+<p>当出现如下内容时说明docker安装已经成功</p>
+<pre><code>Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+</code></pre>
+<h3 id="2gitlab-docker的安装和运行">2.GitLab Docker的安装和运行</h3>
+<p>gitlab镜像拉取</p>
+<pre><code># gitlab-ce为稳定版本，后面不填写版本则默认pull最新latest版本
+$ docker pull gitlab/gitlab-ce
+</code></pre>
+<p>运行gitlab镜像</p>
+<pre><code>$ docker run -d  -p 443:443 -p 80:80 -p 222:22 --name gitlab --restart always -v /home/gitlab/config:/etc/gitlab -v /home/gitlab/logs:/var/log/gitlab -v /home/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce
+# -d：后台运行
+# -p：将容器内部端口向外映射
+# --name：命名容器名称
+# -v：将容器内数据文件夹或者日志、配置等文件夹挂载到宿主机指定目录
+</code></pre>
+<p>当成功之后会出现一串字符<br>
+之后在浏览器中运行localhost:80 就可已看到gitLab 了。需要注意的时登录的时候用户名为root.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>C:/Users/zhr/Documents/Gridea/output/post/hello-gridea/index.html</id>
+        <link href="C:/Users/zhr/Documents/Gridea/output/post/hello-gridea/index.html">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
